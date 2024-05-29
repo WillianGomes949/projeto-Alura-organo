@@ -4,16 +4,7 @@ import DropdownList from '../DropdownList';
 import TextField from '../TextField';
 import './Form.css';
 
-const Form = () => {
-  const times = [
-    'Programação',
-    'Front-End',
-    'Data Science',
-    'Devops',
-    'UX e Design',
-    'Mobile',
-    'Inovação e Gestão',
-  ];
+const Form = (props) => {
 
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
@@ -22,9 +13,12 @@ const Form = () => {
 
   const aoSalvar = (e) => {
     e.preventDefault();
-    console.log(
-      `Formulario submetido: ${nome}, função ${cargo}, imagem link (${imagem}...)`
-    );
+    props.aoColaboradorCadastrado({
+      nome,
+      cargo,
+      imagem,
+      time,
+    });
   };
 
   return (
@@ -51,12 +45,12 @@ const Form = () => {
           valor={imagem}
           aoAlterado={(valor) => setImagem(valor)}
         />
-        <DropdownList 
-        obrigatorio={true} 
-        label="Time" 
-        itens={times}
-        valor={time}
-        aoAlterado={valor => setTime(valor)}
+        <DropdownList
+          obrigatorio={true}
+          label="Time"
+          itens={props.times}
+          valor={time}
+          aoAlterado={(valor) => setTime(valor)}
         />
         <Button>Criar Card</Button>
       </form>
