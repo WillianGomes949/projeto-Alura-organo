@@ -45,7 +45,7 @@ function App() {
   const [colaboradores, setColaboradores] = useState([]);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    debugger
+    //debugger
     setColaboradores([...colaboradores, colaborador]);
   };
 

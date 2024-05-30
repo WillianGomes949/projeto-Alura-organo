@@ -10,3 +10,10 @@
     display: inline-block;
     padding-bottom: 8px;
 }
+
+.colaboradores {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 4px;
+}
