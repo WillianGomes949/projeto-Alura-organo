@@ -53,12 +53,12 @@ function App() {
     <div className="App">
       <Banner />
       <Form
-        times={times.map(time => time.nome )}
-        aoColaboradorCadastrado={ colaborador =>
+        times={times.map(time => time.nome)}
+        aoColaboradorCadastrado={colaborador =>
           aoNovoColaboradorAdicionado(colaborador)
         }
       />
-      {times.map((time) => 
+      {times.map((time) =>
         <Time
           key={time.nome}
           nome={time.nome}
